@@ -3,7 +3,10 @@ import unittest
 
 from ws4py import format_addresses
 from ws4py.websocket import WebSocket
-from mock import MagicMock
+try:
+    from unittest.mock import MagicMock
+except ImportError:
+    from mock import MagicMock
 
 class WSUtilities(unittest.TestCase):
     def test_format_address(self):
